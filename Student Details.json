@@ -1,0 +1,207 @@
+{
+  "name": "Student Details",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Student Details",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Name"
+            },
+            {
+              "fieldLabel": "last name"
+            },
+            {
+              "fieldLabel": "Branch"
+            },
+            {
+              "fieldLabel": "Interest ",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Core"
+                  },
+                  {
+                    "option": "IT"
+                  },
+                  {
+                    "option": "Core-IT"
+                  }
+                ]
+              }
+            },
+            {
+              "fieldLabel": "USN"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        -464,
+        16
+      ],
+      "id": "8a8b67c8-436f-4b2d-bf1a-63ba431fe63e",
+      "name": "Form",
+      "webhookId": "a6fb71f3-dec2-4078-8162-6c5e419ab157"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "base": {
+          "__rl": true,
+          "value": "appBidP50bZ2l80Iw",
+          "mode": "list",
+          "cachedResultName": "Student Details",
+          "cachedResultUrl": "https://airtable.com/appBidP50bZ2l80Iw"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblBKgE3L4GVea56U",
+          "mode": "list",
+          "cachedResultName": "Table 1",
+          "cachedResultUrl": "https://airtable.com/appBidP50bZ2l80Iw/tblBKgE3L4GVea56U"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Name": "={{ $json.Name }}",
+            "last name": "={{ $json['last name'] }}",
+            "Branch": "={{ $json.Branch }}",
+            "Interest": "={{ $json['Interest '] }}",
+            "USN": "={{ $json.USN }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "last name",
+              "displayName": "last name",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Branch",
+              "displayName": "Branch",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Interest",
+              "displayName": "Interest",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "Core",
+                  "value": "Core"
+                },
+                {
+                  "name": "IT",
+                  "value": "IT"
+                },
+                {
+                  "name": "Core-IT",
+                  "value": "Core-IT"
+                }
+              ],
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "USN",
+              "displayName": "USN",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "Attachment Summary",
+              "displayName": "Attachment Summary",
+              "required": false,
+              "defaultMatch": false,
+              "canBeUsedToMatch": true,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2.1,
+      "position": [
+        -256,
+        16
+      ],
+      "id": "1f7bfa07-f76b-4cfb-bf66-99f52d97455e",
+      "name": "Airtable Record",
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "Gf3z1cR3j2fWgeoC",
+          "name": "Airtable Personal Access Token account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Form": {
+      "main": [
+        [
+          {
+            "node": "Airtable Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "cdcb4beb-0be4-4ac6-ab10-318ea6892be7",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "2cfbde62ee4ab1f00936ece92b178c7189c259c88ba074a83bcc917f8099ce36"
+  },
+  "id": "v0zWaYFELZN0ntqi",
+  "tags": []
+}
