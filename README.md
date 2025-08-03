@@ -1,4 +1,4 @@
-# n8n_project1
+# First_AI_Agent
 I developed an AI-powered automation agent that manages student details using Airtable as the database and n8n as the automation engine. The agent can receive, store, and retrieve student information such as name, age, department, and email. It acts as a lightweight, automated system for tracking student records in real-time.
 
  <img width="920" height="459" alt="Screenshot 2025-08-04 012214" src="https://github.com/user-attachments/assets/4aa0b385-4748-4fef-9f01-0d3466ffa2b0" />
